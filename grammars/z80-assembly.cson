@@ -24,7 +24,7 @@
     'name': 'storage.type'
   }
   {
-    'match': '\\.(list|nolist|org|align|include|echo|echoln|fail|warn|end|addinstr|breakpoint|locallabelchar|module|local|global|nestmodules|using|equ|export|endexport|exportmode|enum|relocate|inclabels|var|tvar|tempvar|varloc|dvar|struct|db|byte|text|dw|word|incbin|rlemode|block|chk|fill|dbrnd|dwrnd|asc|asciimap|dbsin|dbcos|dwtan|incbmp|define|undef|defcont|deflong|binarymode|variablename|tivariabletype|tiarchived|binaryfill|sdsctag|segaregion|segapart|unsquish|signkey|appfield|if|else|endif|elseif|ifdef|ifndef|elseifdef|for|loop|repeat|fopen|fclose|fsize|fread|fpeek|fpos|fseek|defpage|page|branch|branchrule)\\b'
+    'match': '\\.(list|nolist|org|align|include|echo|echoln|fail|warn|end|addinstr|breakpoint|locallabelchar|module|endmodule|local|global|nestmodules|using|equ|export|endexport|exportmode|enum|relocate|inclabels|var|tvar|tempvar|varloc|dvar|struct|db|byte|text|dw|word|incbin|rlemode|block|chk|fill|dbrnd|dwrnd|asc|asciimap|dbsin|dbcos|dwtan|incbmp|define|undef|defcont|deflong|binarymode|variablename|tivariabletype|tiarchived|binaryfill|sdsctag|segaregion|segapart|unsquish|signkey|appfield|if|else|endif|elseif|ifdef|ifndef|elseifdef|for|loop|repeat|fopen|fclose|fsize|fread|fpeek|fpos|fseek|defpage|page|branch|branchrule)\\b'
     'name': 'entity.directive'
   }
   {
