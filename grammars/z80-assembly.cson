@@ -10,8 +10,8 @@
     'name': 'comment.line'
   }
   {
-    'begin': '^\\s*[\\#%]\\s*(?i:if)\\s+0\\b'
-    'end': '^\\s*[\\#%]\\s*(?i:endif)\\b'
+    'begin': '^\\s*\\#\\s*(?i:if)\\s+0\\b'
+    'end': '^\\s*\\#\\s*(?i:endif)\\b'
     'name': 'comment.preprocessor'
   }
   {
@@ -63,7 +63,7 @@
     ]
   }
   {
-    'begin': '^\\s*[#%]\\s*(error|warning)\\b'
+    'begin': '^\\s*#\\s*(error|warning)\\b'
     'captures':
       '1':
         'name': 'keyword.control.import.error.c'
@@ -77,7 +77,7 @@
     ]
   }
   {
-    'begin': '^\\s*[#%]\\s*(?i:include)\\b\\s+'
+    'begin': '^\\s*#\\s*(?i:include)\\b\\s+'
     'captures':
       '1':
         'name': 'keyword.control.import.include.c'
