@@ -1,0 +1,159 @@
+'fileTypes': [
+  'z80',
+  'inc'
+]
+'name': 'z80 Assembly'
+'scopeName': 'source.z80'
+'patterns': [
+  {
+    'match': '[;#].*$'
+    'name': 'comment.line'
+  }
+  {
+    'begin': '^\\s*[\\#%]\\s*(?i:if)\\s+0\\b'
+    'end': '^\\s*[\\#%]\\s*(?i:endif)\\b'
+    'name': 'comment.preprocessor'
+  }
+  {
+    'begin': '\\.endasm'
+    'end': '\\.asm'
+    'name': 'comment.block'
+  }
+  {
+    'match': '\\b(byte|ubyte|asc|word|uword|int|uint|fp[0-9]+\\.[0-9]+|ufp[0-9]+\\.[0-9]+|tifloat)\\b'
+    'name': 'storage.type'
+  }
+  {
+    'match': '\\.(list|nolist|org|align|include|echo|echoln|fail|warn|end|addinstr|breakpoint|locallabelchar|module|local|global|nestmodules|using|equ|export|endexport|exportmode|enum|relocate|inclabels|var|tvar|tempvar|varloc|dvar|struct|db|byte|text|dw|word|incbin|rlemode|block|chk|fill|dbrnd|dwrnd|asc|asciimap|dbsin|dbcos|dwtan|incbmp|define|undef|defcont|deflong|binarymode|variablename|tivariabletype|tiarchived|binaryfill|sdsctag|segaregion|segapart|unsquish|signkey|appfield|if|else|endif|elseif|ifdef|ifndef|elseifdef|for|loop|repeat|fopen|fclose|fsize|fread|fpeek|fpos|fseek|defpage|page|branch|branchrule)\\b'
+    'name': 'entity.directive'
+  }
+  {
+    'begin': '["\']'
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.string.begin.asm'
+    'end': '["\']'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.string.end.asm'
+    'name': 'string.quoted.asm'
+    'patterns': [
+      {
+        'include': '#string_escaped_char'
+      }
+      {
+        'include': '#string_placeholder'
+      }
+    ]
+  }
+  {
+    'begin': '\''
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.string.begin.c'
+    'end': '\''
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.string.end.c'
+    'name': 'string.quoted.single.c'
+    'patterns': [
+      {
+        'include': '#string_escaped_char'
+      }
+    ]
+  }
+  {
+    'begin': '^\\s*[#%]\\s*(error|warning)\\b'
+    'captures':
+      '1':
+        'name': 'keyword.control.import.error.c'
+    'end': '$'
+    'name': 'meta.preprocessor.diagnostic.c'
+    'patterns': [
+      {
+        'match': '(?>\\\\\\s*\\n)'
+        'name': 'punctuation.separator.continuation.c'
+      }
+    ]
+  }
+  {
+    'begin': '^\\s*[#%]\\s*(?i:include)\\b\\s+'
+    'captures':
+      '1':
+        'name': 'keyword.control.import.include.c'
+    'end': '(?=(?://|/\\*))|$'
+    'name': 'meta.preprocessor.c.include'
+    'patterns': [
+      {
+        'match': '(?>\\\\\\s*\\n)'
+        'name': 'punctuation.separator.continuation.c'
+      }
+      {
+        'begin': '"'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.string.begin.c'
+        'end': '"'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.string.end.c'
+        'name': 'string.quoted.double.include.c'
+      }
+      {
+        'begin': '<'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.string.begin.c'
+        'end': '>'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.string.end.c'
+        'name': 'string.quoted.other.lt-gt.include.c'
+      }
+    ]
+  }
+  {
+    'begin': '^\\s*#\\s*(?i:define|elif|else|if|ifdef|ifndef|line|undef|endif)\\b'
+    'captures':
+      '1':
+        'name': 'keyword.control.import.c'
+    'end': '(?=(?://|/\\*))|$'
+    'name': 'meta.preprocessor.c'
+    'patterns': [
+      {
+        'match': '(?>\\\\\\s*\\n)'
+        'name': 'punctuation.separator.continuation.c'
+      }
+    ]
+  }
+  {
+    'match': '\\b(?i:ex|exx|ld|ldd|lddr|ldi|ldir|pop|push|adc|add|cpl|cp|cpd|cpdr|cpi|cpir|daa|dec|inc|neg|sbc|sub|and|bit|ccf|or|res|scf|set|xor|rla|rlc|rlca|rld|rl|rra|rrca|rrc|rrd|rr|sla|sra|srl|call|djnz|jp|jr|nop|ret|reti|retn|rst|di|ei|halt|im|in|ind|indr|ini|inir|otdr|otir|out|outd|outi|bcall|b_call)\\b'
+    'name': 'keyword.mnemonic'
+  }
+  {
+    'match': '\\b(?i:a|b|c|d|e|r|i|h|l|ixh|ixl|iyh|iyl|af|bc|de|hl|ix|iy)\\b'
+    'name': 'storage.register'
+  }
+  {
+    'match': '^\\s*\\.?\\w+:\\s*(?=$|;)'
+    'name': 'entity.name.function'
+  }
+  {
+    'match': '\\b[0-9]+d?\\b'
+    'name': 'constant.numeric.dec'
+  }
+  {
+    'match': '(\\b[0-9a-fA-F]+h|\\$[0-9a-fA-F]+)\\b'
+    'name': 'constant.numeric.hex'
+  }
+  {
+    'match': '(\\b[01]+b|%[01]+)\\b'
+    'name': 'constant.numeric.bin'
+  }
+  {
+    'match': '(\\b[0-8]+o|@[0-8]+)\\b'
+    'name': 'constant.numeric.oct'
+  }
+
+]
+'scopeName': 'source.asm.z80'
