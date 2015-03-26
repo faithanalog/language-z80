@@ -127,7 +127,7 @@
     ]
   }
   {
-    'match': '\\b(?i:ex|exx|ld|ldd|lddr|ldi|ldir|pop|push|adc|add|cpl|cp|cpd|cpdr|cpi|cpir|daa|dec|inc|neg|sbc|sub|and|bit|ccf|or|res|scf|set|xor|rla|rlc|rlca|rld|rl|rra|rrca|rrc|rrd|rr|sla|sra|srl|call|djnz|jp|jr|nop|ret|reti|retn|rst|di|ei|halt|im|in|ind|indr|ini|inir|otdr|otir|out|outd|outi|bcall|b_call)\\b'
+    'match': '\\b(?i:ex|exx|ld|ldd|lddr|ldi|ldir|pop|push|adc|add|cpl|cp|cpd|cpdr|cpi|cpir|daa|dec|inc|neg|sbc|sub|and|bit|ccf|or|res|scf|set|xor|rla|rlc|rlca|rld|rl|rra|rrca|rrc|rrd|rr|sla|sra|srl|call|djnz|jp|jr|nop|ret|reti|retn|rst|di|ei|halt|im|in|ind|indr|ini|inir|otdr|otir|out|outd|outi|bcall|b_call|sll|sl1)\\b'
     'name': 'keyword.mnemonic'
   }
   {
