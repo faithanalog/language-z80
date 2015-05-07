@@ -1,6 +1,7 @@
 'fileTypes': [
   'z80',
-  'inc'
+  'inc',
+  'asm'
 ]
 'name': 'z80 Assembly'
 'scopeName': 'source.z80'
