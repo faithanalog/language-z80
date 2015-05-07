@@ -1,11 +1,11 @@
 {
   "name": "language-z80asm",
-  "version": "0.31.0",
+  "version": "0.32.0",
   "description": "Adds syntax highlighting to z80 asm files in Atom. Primarily focused on TI calculator programming with Brass.",
   "homepage": "https://github.com/unknownloner/language-z80",
   "repository": {
-      "type": "git",
-      "url": "https://github.com/unknownloner/language-z80"
+    "type": "git",
+    "url": "https://github.com/unknownloner/language-z80"
   },
   "license": "GPLv3",
   "engines": {
