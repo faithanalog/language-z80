@@ -144,11 +144,11 @@
     'name': 'constant.numeric.dec'
   }
   {
-    'match': '(\\b[0-9a-fA-F]+h|\\$[0-9a-fA-F]+)\\b'
+    'match': '(\\b[0-9a-fA-F]+h|0x[0-9a-fA-F]+|\\$[0-9a-fA-F]+)\\b'
     'name': 'constant.numeric.hex'
   }
   {
-    'match': '(\\b[01]+b|%[01]+)\\b'
+    'match': '(\\b[01]+b|0b[01]+|%[01]+)\\b'
     'name': 'constant.numeric.bin'
   }
   {
